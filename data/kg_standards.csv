@@ -1,0 +1,24 @@
+Region,Crop,Optimal_N,Optimal_P,Optimal_K,Optimal_pH,Expected_Yield_ha,Soil_Type,Notes
+Batken,Apricot,60,30,280,7.5,12.0,Brown-Soil,Improved sweetness
+Batken,Cotton,70,45,240,7.75,3.0,Light-Serozem,Heat-loving crop
+Batken,Grapes,50,30,180,7.4,7.0,Brown-Soil,Moderate yield
+Batken,Wheat,70,40,220,7.15,2.5,Serozem,Low rainfall limits yield
+Chuy,Apple,80,40,300,6.75,45.0,Brown-Soil,Intensive orchards
+Chuy,Maize,100,50,250,6.9,7.0,Serozem,High nitrogen demand
+Chuy,Potato,90,50,330,6.25,17.0,Mountain-Meadow,High starch yield
+Chuy,Wheat,70,40,220,7.15,2.6,Serozem,Common grain crop
+Issyk-Kul,Apple,80,40,300,6.75,50.0,Brown-Soil,High sugar content
+Issyk-Kul,Potato,90,50,330,6.25,17.0,Mountain-Meadow,High starch yield
+Issyk-Kul,Wheat,70,40,220,7.15,2.5,Serozem,Common grain crop
+Jalal-Abad,Apricot,60,30,280,7.5,12.0,Brown-Soil,Improved sweetness
+Jalal-Abad,Cotton,70,45,240,7.75,3.0,Light-Serozem,Heat-loving crop
+Jalal-Abad,Rice,110,50,150,6.4,4.0,Meadow-Marsh,Flooded fields
+Jalal-Abad,Grapes,50,30,180,7.4,8.0,Brown-Soil,Moderate yield
+Naryn,Barley,50,30,180,7.0,2.2,Mountain-Meadow,Cold resistant
+Naryn,Potato,90,50,330,6.25,16.5,Mountain-Meadow,High starch yield
+Osh,Cotton,70,45,240,7.75,3.0,Light-Serozem,Needs phosphorus for fiber
+Osh,Maize,100,50,250,6.9,6.8,Serozem,Average yields
+Osh,Rice,110,50,150,6.4,4.0,Meadow-Marsh,High nitrogen demand
+Osh,Wheat,70,40,220,7.15,2.5,Serozem,Common grain crop
+Talas,Barley,50,30,180,7.0,2.5,Chestnut,Cold resistant
+Talas,Potato,90,50,330,6.25,17.0,Mountain-Meadow,High starch yield
