@@ -1,10 +1,16 @@
 import streamlit as st
 import pandas as pd
+import os
+
 from src.predictor import predict_yield, recommend_crop
 from src.dss_logic import get_recommendation
 from src.interpretability import get_feature_importance
-from src.shap import get_shap_explanation
+from src.shap_utils import get_shap_explanation
 import os
+
+import src.dss_logic as dss
+print(dss.get_recommendation)
+
 
 st.set_page_config(page_title="AgroExpert KG", layout="wide")
 
@@ -53,7 +59,7 @@ if st.sidebar.button("Run Analysis"):
         base_yield = row["Expected_Yield_ha"]
 
         pred_yield = predict_yield(region, crop, n, p, k, rainfall, ph)
-        advice = get_recommendation(region, crop, n, p, k, ph)
+        advice = get_recommendation(region, crop, n, p, k, ph, rainfall)
 
         st.header(f"{crop} in {region}")
         col1, col2 = st.columns(2)

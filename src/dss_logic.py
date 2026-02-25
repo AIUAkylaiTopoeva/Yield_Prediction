@@ -8,7 +8,7 @@ def load_standards():
     except FileNotFoundError:
         return None
 
-def get_recommendation(region, crop, user_n, user_p, user_k, user_ph):
+def get_recommendation(region, crop, user_n, user_p, user_k, user_ph, user_rainfall):  # Добавил user_rainfall
     df = load_standards()
     if df is None:
         return "Error: standards file not found"
@@ -18,7 +18,7 @@ def get_recommendation(region, crop, user_n, user_p, user_k, user_ph):
         return "No data for this region and crop"
 
     row = row.iloc[0]
-    opt_n, opt_p, opt_k, opt_ph = row["Optimal_N"], row["Optimal_P"], row["Optimal_K"], row["Optimal_pH"]
+    opt_n, opt_p, opt_k, opt_ph, opt_rain = row["Optimal_N"], row["Optimal_P"], row["Optimal_K"], row["Optimal_pH"], row["Optimal_Rainfall"]  # Добавил opt_rain
 
     messages = []
 
@@ -40,7 +40,15 @@ def get_recommendation(region, crop, user_n, user_p, user_k, user_ph):
         else:
             messages.append(f"pH too high ({user_ph}): add sulfur to lower pH.")
 
+    # Добавил логику для rainfall (из train_model.py)
+    rain_min = opt_rain * 0.65
+    rain_max = opt_rain * 1.35
+    if user_rainfall < rain_min:
+        messages.append(f"Rainfall too low ({user_rainfall} mm): irrigation needed. Yield may drop 20-30%.")
+    elif user_rainfall > rain_max:
+        messages.append(f"Rainfall too high ({user_rainfall} mm): drainage recommended. Risk of flooding.")
+
     if not messages:
-        messages.append("Soil parameters are optimal.")
+        messages.append("Soil and climate parameters are optimal.")
 
     return "\n".join(messages)
